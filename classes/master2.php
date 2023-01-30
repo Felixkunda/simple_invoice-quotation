@@ -188,17 +188,23 @@ Class master2 extends DBConnection {
 	}
 	function generate_code(){
 		extract($_POST);
+		$sequence = 1;
+		$code = ($type == 1) ? 'Product-' : 'Service-';
+		$code .= sprintf("%'.07d", $sequence);
+		
 		while(true){
-			$code = ($type == 1) ? 'Product-' : 'Service-';
-			$code .= sprintf("%'.07d",mt_rand(1,9999999));
-			$chk = $this->conn->query("SELECT * FROM quotation_list where quotation_code = '{$code}'")->num_rows;
+			$chk = $this->conn->query("SELECT * FROM invoice_list where invoice_code = '{$code}'")->num_rows;
 			if($chk <= 0)
 				break;
+			$sequence++;
+			$code = ($type == 1) ? 'Product-' : 'Service-';
+			$code .= sprintf("%'.07d", $sequence);
 		}
 		$resp['status'] = 'success';
 		$resp['code'] = $code;
 		return json_encode($resp);
 	}
+	
 	function code_availability(){
 		extract($_POST);
 		$chk = $this->conn->query("SELECT * FROM quotation_list where quotation_code = '{$code}' " .($id > 0 ? "and id!='{$id}'" :''))->num_rows;

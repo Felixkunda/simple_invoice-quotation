@@ -25,7 +25,7 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-file-invoice"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Qutations</span>
+                <span class="info-box-text">Quotations</span>
                 <span class="info-box-number">
                   <?php echo number_format($conn->query("SELECT * FROM quotation_list")->num_rows) ?>
                 </span>

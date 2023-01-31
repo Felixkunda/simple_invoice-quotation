@@ -18,6 +18,25 @@
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
+          
+          <!--Qutation Box-->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-file-invoice"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Qutations</span>
+                <span class="info-box-number">
+                  <?php echo number_format($conn->query("SELECT * FROM quotation_list")->num_rows) ?>
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          
+          
+          <!--End of Qutation box-->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
               <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-th-list"></i></span>

@@ -97,7 +97,7 @@ CREATE TABLE `invoice_list` (
 
 CREATE TABLE `quotations_items` (
   `id` int(30) NOT NULL,
-  `quoation_id` int(30) NOT NULL,
+  `quotation_id` int(30) NOT NULL,
   `form_id` int(30) NOT NULL,
   `unit` varchar(50) NOT NULL,
   `quantity` float NOT NULL,

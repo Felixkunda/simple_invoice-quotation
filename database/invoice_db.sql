@@ -106,7 +106,7 @@ CREATE TABLE `quotations_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-INSERT INTO `quotation_items` (`id`, `quotation_id`, `form_id`, `unit`, `quantity`, `price`, `total`) VALUES
+INSERT INTO `quotations_items` (`id`, `quotation_id`, `form_id`, `unit`, `quantity`, `price`, `total`) VALUES
 (1, 1, 1, 'pcs', 3, 367.88, 1103.64),
 (2, 1, 3, 'pcs', 5, 250.5, 1252.5),
 (3, 2, 1, 'svc', 1, 500, 500),
